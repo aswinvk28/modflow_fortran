@@ -8,6 +8,14 @@ docker exec -it modflow_fortran /bin/bash
 
 ```
 
+## **Compile MODFLOW**
+
+```bash
+
+
+
+```
+
 ## **Compile Hello World Application**
 
 ```bash
@@ -30,3 +38,16 @@ output:
 
 ```
 
+## **Relevant Software**
+
+**ModelMuse**
+
+[https://www.usgs.gov/software/modelmuse-a-graphical-user-interface-groundwater-models](https://www.usgs.gov/software/modelmuse-a-graphical-user-interface-groundwater-models)
+
+**Model Viewer**
+
+[https://www.usgs.gov/software/model-viewer-a-program-three-dimensional-visualization-ground-water-model-results](https://www.usgs.gov/software/model-viewer-a-program-three-dimensional-visualization-ground-water-model-results)
+
+## **Tutorial on ModFlow**
+
+[https://www.youtube.com/watch?v=dE5RCUElIu4](https://www.youtube.com/watch?v=dE5RCUElIu4)

@@ -39,7 +39,33 @@ RUN git clone --depth 1 https://github.com/scivision/cmake-utils && \
 
 RUN cd cmake-utils/build && sudo make && sudo make all
 
+RUN sudo apt-get --yes install geany
+
+RUN sudo apt-get install ncurses-term -y
+
 ENV PATH=$PATH:/home/nonprivuser/.local/cmake/bin
+
+RUN sudo apt-get install wget -y
+WORKDIR /home/nonprivuser/
+RUN wget https://water.usgs.gov/water-resources/software/MODFLOW-6/mf6.2.0.zip
+
+RUN sudo apt-get install unzip -y
+RUN unzip -o mf6.2.0.zip
+
+RUN sudo mkdir -p /home/project/
+WORKDIR /home/nonprivuser/mf6.2.0/make
+RUN make -f makefile
+
+COPY . /home/project
+WORKDIR /home/project/install_lin
+
+RUN sudo mkdir -p /usr/local/include
+RUN sudo mv toolbox.mod /usr/local/include/
+RUN sudo mv toolbox.o /usr/local/include/
+RUN sudo mv toolbox_debug.o /usr/local/include/
+RUN sudo cp ./src/toolbox_version.sh /usr/local/include/
+
+WORKDIR /home/project/
 
 # other optional installs
 
