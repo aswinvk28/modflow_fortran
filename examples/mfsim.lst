@@ -1,0 +1,297 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                            VERSION 6.2.0 10/22/2020
+
+   MODFLOW 6 compiled Oct 22 2020 09:26:42 with IFORT compiler (ver. 19.10.2)
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+System command used to initiate simulation:
+C:\Users\burse\Documents\Projects\modflow-fortran\modflow_fortran\mf6.2.0\mf6.2.0\bin\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  BIT SIZE: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  BIT SIZE: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  BIT SIZE: 64
+
+Logical Variables
+  KIND: 4
+  BIT SIZE: 32
+ 
+
+ OPENED mfsim.nam
+ FILE TYPE:NAM   UNIT 1001   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ READING SIMULATION TIMING
+
+ OPENED C:\Users\burse\Documents\Projects\modflow-fortran\modflow_fortran\examples\example_problem.tdis
+ FILE TYPE:TDIS   UNIT 1002   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ TDIS -- TEMPORAL DISCRETIZATION PACKAGE,
+ VERSION 1 : 11/13/2014 - INPUT READ FROM UNIT 1002
+ # TDIS file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+ PROCESSING TDIS OPTIONS
+    SIMULATION TIME UNIT IS SECONDS
+ END OF TDIS OPTIONS
+ PROCESSING TDIS DIMENSIONS
+    1 STRESS PERIOD(S) IN SIMULATION
+ END OF TDIS DIMENSIONS
+ PROCESSING TDIS PERIODDATA
+
+
+ STRESS PERIOD     LENGTH       TIME STEPS     MULTIPLIER FOR DELT
+ ----------------------------------------------------------------------------
+        1         86400.00          1                    1.000
+ END OF TDIS PERIODDATA
+ END OF SIMULATION TIMING
+
+ READING SIMULATION MODELS
+    GWF6 model MODFLOW will be created as model 1
+ END OF SIMULATION MODELS
+
+ READING SIMULATION EXCHANGES
+ END OF SIMULATION EXCHANGES
+
+ READING SOLUTIONGROUP
+
+ Creating solution: SLN_1           
+
+ OPENED C:\Users\burse\Documents\Projects\modflow-fortran\modflow_fortran\examples\example_problem.ims
+ FILE TYPE:IMS   UNIT 1013   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+ END OF SIMULATION SOLUTIONGROUP
+
+ IMS -- ITERATIVE MODEL SOLUTION PACKAGE, VERSION 6, 4/28/2017
+         INPUT READ FROM UNIT 1013
+ # IMS: Iterative Model Solution file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+
+ PROCESSING IMS OPTIONS
+ SIMPLE OPTION:
+ DEFAULT SOLVER INPUT VALUES FOR FAST SOLUTIONS
+
+ OPENED example_problem.Solution.CSV
+ FILE TYPE:CSV_OUTPUT   UNIT 1017   STATUS:REPLACE             
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READWRITE           
+
+    CSV OUTPUT WILL BE SAVED TO FILE: example_problem.Solution.CSV
+    OPENED ON UNIT:    1017
+ END OF IMS OPTIONS
+
+ PROCESSING IMS NONLINEAR
+ END OF IMS NONLINEAR DATA
+ ***UNDER-RELAXATION WILL NOT BE USED***
+ 
+ ***IMS LINEAR SOLVER WILL BE USED***
+
+ IMSLINEAR -- UNSTRUCTURED LINEAR SOLUTION PACKAGE, VERSION 8, 04/28/2017
+
+ PROCESSING LINEAR DATA
+ END OF LINEAR DATA
+ 
+ OUTER ITERATION CONVERGENCE CRITERION    (DVCLOSE) =    0.100000E-02
+ MAXIMUM NUMBER OF OUTER ITERATIONS        (MXITER) = 25
+ SOLVER PRINTOUT INDEX                     (IPRIMS) = 2
+ NONLINEAR ITERATION METHOD            (NONLINMETH) = 0
+ LINEAR SOLUTION METHOD                   (LINMETH) = 1
+
+       SOLUTION BY THE        CONJUGATE-GRADIENT       METHOD
+ ------------------------------------------------------------------
+ MAXIMUM OF 25 CALLS OF SOLUTION ROUTINE
+ MAXIMUM OF 50 INTERNAL ITERATIONS PER CALL TO SOLUTION ROUTINE
+ LINEAR ACCELERATION METHOD            = CG        
+ MATRIX PRECONDITIONING TYPE           = INCOMPLETE LU       
+ MATRIX SCALING APPROACH               = NO SCALING          
+ MATRIX REORDERING APPROACH            = ORIGINAL ORDERING        
+ NUMBER OF ORTHOGONALIZATIONS          = 0
+ HEAD CHANGE CRITERION FOR CLOSURE     =    0.10000E-02
+ RESIDUAL CHANGE CRITERION FOR CLOSURE =    0.10000E+00
+ RESIDUAL CONVERGENCE OPTION           = 0
+ RESIDUAL CONVERGENCE NORM             = INFINITY NORM   
+ RELAXATION FACTOR                     =    0.00000E+00
+
+
+
+1
+                            STRESS PERIOD NO.    1, LENGTH =   86400.00    
+                            -----------------------------------------------
+
+                              NUMBER OF TIME STEPS =     1
+
+                               MULTIPLIER FOR DELT =     1.000
+
+                            INITIAL TIME STEP SIZE =   86400.00    
+
+ OUTER ITERATION SUMMARY
+ ----------------------------------------------------------------------------------------------------------
+                                OUTER      INNER                    STEP   MAXIMUM CHANGE MODEL-(CELLID) OR
+ OUTER ITERATION STEP       ITERATION  ITERATION  MAXIMUM CHANGE SUCCESS             MODEL-PACKAGE-(NUMBER)
+ ----------------------------------------------------------------------------------------------------------
+ Model                              1         42      -171.72143                              1_GWF-(1,8,3)
+ Model                              2         39      -36.382093                             1_GWF-(1,8,10)
+ Model                              3          4     -0.80627658                              1_GWF-(1,8,6)
+ Model                              4          1 -5.21923202E-04       *                      1_GWF-(1,6,8)
+ ----------------------------------------------------------------------------------------------------------
+
+
+ 4 CALLS TO NUMERICAL SOLUTION IN TIME STEP 1 STRESS PERIOD 1
+ 86 TOTAL ITERATIONS
+
+ INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1      -76.521946                      1_GWF-(1,8,3)       84.318634                     1_GWF-(2,14,2)
+          2          1          2      -2.8466202                      1_GWF-(1,9,1)       21.285064                     1_GWF-(2,15,1)
+          3          1          3     -0.25538044                      1_GWF-(1,6,6)       26.607626                     1_GWF-(2,14,2)
+          4          1          4      0.22785956                      1_GWF-(1,6,5)      -81.374949                     1_GWF-(2,14,2)
+          5          1          5      0.16702416                      1_GWF-(1,5,7)       203.30103                     1_GWF-(2,14,2)
+          6          1          6     -0.21931448                     1_GWF-(1,11,4)      -147.25947                     1_GWF-(2,14,2)
+          7          1          7      0.18519964                     1_GWF-(1,10,1)      -186.36494                     1_GWF-(2,15,1)
+          8          1          8      0.68411598                      1_GWF-(1,5,7)      -473.22194                     1_GWF-(2,14,2)
+          9          1          9      -1.2865972                      1_GWF-(1,5,7)       332.54141                      1_GWF-(2,8,2)
+         10          1         10      -1.7054265                      1_GWF-(1,4,8)      -850.17119                      1_GWF-(2,8,2)
+         11          1         11      -3.4243187                     1_GWF-(1,10,1)       2227.0851                     1_GWF-(2,12,2)
+         12          1         12      -8.4016811                     1_GWF-(1,11,1)       2901.4366                     1_GWF-(2,14,2)
+         13          1         13      -10.704811                      1_GWF-(1,3,8)       1430.4290                      1_GWF-(2,8,2)
+         14          1         14      -3.9196495                     1_GWF-(1,10,1)       451.56679                     1_GWF-(2,12,4)
+         15          1         15      -1.2064296                     1_GWF-(1,12,1)       288.18112                      1_GWF-(2,7,2)
+         16          1         16     -0.49902227                      1_GWF-(1,3,9)      -123.08263                      1_GWF-(2,7,2)
+         17          1         17      0.17429027                     1_GWF-(1,12,1)       79.410250                      1_GWF-(2,7,2)
+         18          1         18      0.28725308                      1_GWF-(1,2,9)      -84.154104                      1_GWF-(2,7,2)
+         19          1         19     -0.20000523                     1_GWF-(1,13,2)      -38.833144                     1_GWF-(2,10,2)
+         20          1         20 -8.43585453E-02                     1_GWF-(1,1,10)       38.137095                     1_GWF-(2,10,2)
+         21          1         21  9.75180700E-02                     1_GWF-(1,1,10)       68.341263                      1_GWF-(2,6,2)
+         22          1         22     -0.24321825                     1_GWF-(1,13,2)       143.70082                     1_GWF-(2,2,14)
+         23          1         23     -0.94580195                     1_GWF-(1,1,11)      -268.50996                      1_GWF-(2,9,2)
+         24          1         24      -1.3965024                     1_GWF-(1,12,1)       1759.7914                     1_GWF-(2,2,14)
+         25          1         25      -18.100842                     1_GWF-(1,13,1)       5753.3218                     1_GWF-(2,1,15)
+         26          1         26      -85.254852                     1_GWF-(1,1,10)       13896.945                     1_GWF-(2,2,14)
+         27          1         27      -49.544124                     1_GWF-(5,6,10)      -5475.6732                     1_GWF-(2,2,14)
+         28          1         28      -19.991575                     1_GWF-(1,14,1)       4544.6734                     1_GWF-(2,2,14)
+         29          1         29      -12.652312                     1_GWF-(1,1,11)      -1728.4482                     1_GWF-(2,2,14)
+         30          1         30      -3.7510981                     1_GWF-(1,3,12)      -980.31922                      1_GWF-(2,1,2)
+         31          1         31      -3.4344805                     1_GWF-(1,14,1)      -701.84733                     1_GWF-(2,2,14)
+         32          1         32      -1.2166873                     1_GWF-(1,1,11)      -329.14754                      1_GWF-(2,7,5)
+         33          1         33      0.85529003                     1_GWF-(1,14,1)      -234.29205                     1_GWF-(2,9,10)
+         34          1         34     -0.87998600                     1_GWF-(1,14,1)       249.29545                     1_GWF-(2,2,12)
+         35          1         35     -0.32286004                     1_GWF-(1,1,12)       68.641412                      1_GWF-(2,6,5)
+         36          1         36      0.11447055                     1_GWF-(1,13,2)      -16.017451                      1_GWF-(2,1,2)
+         37          1         37 -2.26641131E-02                     1_GWF-(1,14,1)      -6.2927260                      1_GWF-(2,2,1)
+         38          1         38 -8.40486423E-03                     1_GWF-(1,13,2)      -1.7906993                      1_GWF-(2,1,2)
+         39          1         39  1.67430068E-03                     1_GWF-(1,13,2)       1.6993718                      1_GWF-(2,1,2)
+         40          1         40  2.29992079E-03                     1_GWF-(1,12,4)       2.0296497                      1_GWF-(2,2,1)
+         41          1         41 -2.06574909E-03                     1_GWF-(1,13,2)     -0.39077956                      1_GWF-(2,2,1)
+         42          1         42 -4.73353794E-04                     1_GWF-(1,12,4) -8.58075017E-02                      1_GWF-(2,1,2)
+         43          2          1      -18.989136                     1_GWF-(1,8,10)       5.5982154                     1_GWF-(2,7,10)
+         44          2          2     -0.59025135                     1_GWF-(1,7,11)       2.5345977                      1_GWF-(2,8,9)
+         45          2          3 -2.83672131E-02                     1_GWF-(1,6,12)       1.1392065                      1_GWF-(2,9,9)
+         46          2          4  1.53644602E-02                     1_GWF-(1,6,12)      -2.1310688                     1_GWF-(2,7,10)
+         47          2          5  3.56238019E-02                     1_GWF-(1,5,13)       3.9630226                     1_GWF-(2,7,10)
+         48          2          6 -6.76308732E-02                     1_GWF-(1,5,13)       10.913945                     1_GWF-(2,8,10)
+         49          2          7  4.86433965E-02                     1_GWF-(1,5,13)      -17.483519                     1_GWF-(2,8,10)
+         50          2          8  6.02740653E-02                     1_GWF-(1,4,14)      -35.662293                     1_GWF-(2,7,11)
+         51          2          9 -7.69428469E-02                     1_GWF-(1,12,6)       69.450830                     1_GWF-(2,7,11)
+         52          2         10     -0.48200010                     1_GWF-(1,4,14)      -114.96848                      1_GWF-(2,1,2)
+         53          2         11     -0.84210765                     1_GWF-(1,5,13)      -130.47040                      1_GWF-(2,2,1)
+         54          2         12     -0.89209339                     1_GWF-(1,4,14)       123.80450                      1_GWF-(2,7,9)
+         55          2         13     -0.32978293                     1_GWF-(1,3,15)       67.909732                     1_GWF-(2,6,10)
+         56          2         14 -8.23431096E-02                     1_GWF-(1,11,7)      -28.594145                      1_GWF-(2,1,2)
+         57          2         15 -9.17154255E-02                     1_GWF-(1,12,5)      -25.545793                      1_GWF-(2,2,1)
+         58          2         16 -7.40287837E-02                     1_GWF-(1,3,15)      -14.845886                     1_GWF-(2,14,2)
+         59          2         17  2.30561174E-02                     1_GWF-(1,3,15)       7.9402709                      1_GWF-(2,1,2)
+         60          2         18  1.18989473E-02                     1_GWF-(1,2,15)       6.1875008                     1_GWF-(2,2,14)
+         61          2         19 -1.82559936E-02                     1_GWF-(1,3,15)      -4.3249978                      1_GWF-(2,2,1)
+         62          2         20  1.68751313E-02                     1_GWF-(1,3,15)      -2.8270508                     1_GWF-(2,3,15)
+         63          2         21 -1.01961876E-02                     1_GWF-(1,3,15)      -4.9780330                     1_GWF-(2,4,14)
+         64          2         22 -1.05658208E-02                     1_GWF-(1,2,15)       8.3947058                     1_GWF-(2,4,14)
+         65          2         23  5.59162377E-02                     1_GWF-(1,3,15)       16.001995                      1_GWF-(2,1,2)
+         66          2         24     -0.17340727                     1_GWF-(1,3,15)      -69.221586                      1_GWF-(2,1,2)
+         67          2         25     -0.81385808                     1_GWF-(1,2,15)      -501.12877                      1_GWF-(2,2,1)
+         68          2         26      -5.4967321                     1_GWF-(1,15,3)      -1211.9831                      1_GWF-(2,1,2)
+         69          2         27      -11.561972                     1_GWF-(1,3,15)      -584.64314                      1_GWF-(2,2,1)
+         70          2         28      -2.6553343                     1_GWF-(1,2,15)       272.19361                     1_GWF-(2,11,2)
+         71          2         29     -0.46058149                     1_GWF-(1,15,2)       94.870627                     1_GWF-(2,12,3)
+         72          2         30     -0.19120680                     1_GWF-(1,13,4)      -37.166565                     1_GWF-(2,3,14)
+         73          2         31     -0.20443903                     1_GWF-(1,2,15)      -22.056320                     1_GWF-(2,10,2)
+         74          2         32  7.98211423E-02                     1_GWF-(1,2,15)       25.990919                     1_GWF-(2,2,12)
+         75          2         33  4.74995970E-02                     1_GWF-(1,15,2)      -22.995805                     1_GWF-(2,10,2)
+         76          2         34 -3.63176483E-02                     1_GWF-(1,2,15)      -3.4788184                      1_GWF-(2,9,3)
+         77          2         35 -1.02049386E-02                     1_GWF-(1,15,2)      -3.5983406                     1_GWF-(2,12,2)
+         78          2         36  9.60613951E-03                     1_GWF-(1,15,2)      -2.0193599                     1_GWF-(2,14,6)
+         79          2         37 -2.58814732E-03                     1_GWF-(1,4,14)      0.99540960                     1_GWF-(2,12,1)
+         80          2         38  1.46939663E-03                     1_GWF-(1,2,15)      0.27984276                     1_GWF-(2,11,2)
+         81          2         39  4.88253350E-04                     1_GWF-(1,15,2) -5.12373789E-02                     1_GWF-(2,13,2)
+         82          3          1     -0.80528032                      1_GWF-(1,8,6)      0.16369236                      1_GWF-(2,7,6)
+         83          3          2 -2.21684993E-02                      1_GWF-(1,7,7)  6.09824039E-02                      1_GWF-(2,8,6)
+         84          3          3 -1.08135061E-03                      1_GWF-(1,6,8)  2.51796510E-02                      1_GWF-(2,7,7)
+         85          3          4  6.46017281E-04                      1_GWF-(1,6,8) -6.84072814E-02                      1_GWF-(2,7,7)
+         86          4          1 -5.21923202E-04                      1_GWF-(1,6,8)  5.11187389E-02                      1_GWF-(2,7,7)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ MEMORY MANAGER TOTAL STORAGE BY DATA TYPE, IN KILOBYTES
+ -------------------------------
+                    ALLOCATED   
+ DATA TYPE           MEMORY     
+ -------------------------------
+ Character        12.597000     
+ Logical          4.40000000E-02
+ Integer          245.98400     
+ Real             557.66400     
+ -------------------------------
+ Total            816.28900     
+ -------------------------------
+
+
+ 
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2021/01/27 21:57:32
+ Elapsed run time:  0.063 Seconds
+
+WARNING REPORT:
+
+  1. OPTIONS BLOCK VARIABLE 'CSV_OUTPUT' IN FILE 'example_problem.ims' WAS
+     DEPRECATED IN VERSION 6.1.1. OUTER ITERATION INFORMATION WILL BE SAVED
+     TO example_problem.Solution.CSV.
+  2. NONLINEAR BLOCK VARIABLE 'OUTER_HCLOSE' IN FILE 'example_problem.ims'
+     WAS DEPRECATED IN VERSION 6.1.1. SETTING OUTER_DVCLOSE TO OUTER_HCLOSE
+     VALUE.
+  3. LINEAR BLOCK VARIABLE 'INNER_HCLOSE' IN FILE 'example_problem.ims' WAS
+     DEPRECATED IN VERSION 6.1.1. SETTING INNER_DVCLOSE TO INNER_HCLOSE VALUE.
+ Normal termination of simulation.

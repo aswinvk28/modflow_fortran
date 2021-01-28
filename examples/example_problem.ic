@@ -1,0 +1,18 @@
+# Initial Conditions Package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+BEGIN OPTIONS
+END OPTIONS
+
+BEGIN GRIDDATA
+  STRT LAYERED IPRN    12
+    CONSTANT   2.000000000000E+002  # STRT Upper_Aquifer
+
+    CONSTANT   2.000000000000E+002  # STRT Upper_Aquitard
+
+    CONSTANT   2.000000000000E+002  # STRT Middle_Aquifer
+
+    CONSTANT   2.000000000000E+002  # STRT Lower_Aquitard
+
+    CONSTANT   2.000000000000E+002  # STRT Lower_Aquifer
+
+END GRIDDATA
+

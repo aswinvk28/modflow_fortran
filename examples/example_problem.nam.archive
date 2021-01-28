@@ -1,0 +1,17 @@
+# Name File for MODFLOW created on 27/01/2021 by ModelMuse Version 4.3.0.0
+BEGIN OPTIONS
+  LIST ..\..\output\output.example_problem\example_problem.lst
+  PRINT_INPUT
+  SAVE_FLOWS
+END OPTIONS
+
+BEGIN PACKAGES
+  DIS6         ..\..\model\model.example_problem\example_problem.dis
+  IC6          ..\..\model\model.example_problem\example_problem.ic
+  NPF6         ..\..\model\model.example_problem\example_problem.npf
+  OC6          ..\..\model\model.example_problem\example_problem.oc
+  CHD6         ..\..\model\model.example_problem\example_problem.chd
+  WEL6         ..\..\model\model.example_problem\example_problem.wel
+  DRN6         ..\..\model\model.example_problem\example_problem.drn
+  RCH6         ..\..\model\model.example_problem\example_problem.rch
+END PACKAGES

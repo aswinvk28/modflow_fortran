@@ -1,0 +1,4 @@
+if not exist "..\..\output\NUL" mkdir "..\..\output"
+if not exist "..\..\output\output.example_problem\NUL" mkdir "..\..\output\output.example_problem"
+..\..\bin\mf6.exe
+pause

@@ -1,0 +1,769 @@
+                                   MODFLOW 6
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                            VERSION 6.2.0 10/22/2020
+
+   MODFLOW 6 compiled Oct 22 2020 09:26:42 with IFORT compiler (ver. 19.10.2)
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+System command used to initiate simulation:
+C:\Users\burse\Documents\Projects\modflow-fortran\modflow_fortran\mf6.2.0\mf6.2.0\bin\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  BIT SIZE: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  BIT SIZE: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  BIT SIZE: 64
+
+Logical Variables
+  KIND: 4
+  BIT SIZE: 32
+ 
+
+ OPENED example_problem.dis
+ FILE TYPE:DIS6                   UNIT 1005   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.ic
+ FILE TYPE:IC6                    UNIT 1006   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.npf
+ FILE TYPE:NPF6                   UNIT 1007   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.oc
+ FILE TYPE:OC6                    UNIT 1008   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.chd
+ FILE TYPE:CHD6                   UNIT 1009   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.wel
+ FILE TYPE:WEL6                   UNIT 1010   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.drn
+ FILE TYPE:DRN6                   UNIT 1011   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+
+ OPENED example_problem.rch
+ FILE TYPE:RCH6                   UNIT 1012   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+ NAMEFILE OPTIONS:
+    STRESS PACKAGE INPUT WILL BE PRINTED FOR ALL MODEL STRESS PACKAGES
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM UNIT 1005
+
+
+ # Discretization File created on 27/01/2021 by ModelMuse version 4.3.0.0.
+ # Upper left corner: (0, 0)
+ # Lower left corner: (0, -75000)
+ # Upper right corner: (75000, 0)
+ # Lower right corner: (75000, -75000)
+ # Grid angle (in degrees counterclockwise): 0
+ # Number of active cells = 1125.
+ PROCESSING DISCRETIZATION OPTIONS
+    MODEL LENGTH UNIT IS METERS
+    XORIGIN SPECIFIED AS     0.00000000000000    
+    YORIGIN SPECIFIED AS    -75000.0000000000    
+    ANGROT SPECIFIED AS     0.00000000000000    
+ END OF DISCRETIZATION OPTIONS
+ PROCESSING DISCRETIZATION DIMENSIONS
+    NLAY =       5
+    NROW =      15
+    NCOL =      15
+ END OF DISCRETIZATION DIMENSIONS
+ PROCESSING GRIDDATA
+
+                     DELR =   5000.000    
+
+                     DELC =   5000.000    
+
+ TOP ELEVATION OF LAYER 1 =   200.0000    
+
+   MODEL LAYER BOTTOM EL. =  -150.0000     FOR LAYER 1
+
+   MODEL LAYER BOTTOM EL. =  -200.0000     FOR LAYER 2
+
+   MODEL LAYER BOTTOM EL. =  -300.0000     FOR LAYER 3
+
+   MODEL LAYER BOTTOM EL. =  -350.0000     FOR LAYER 4
+
+   MODEL LAYER BOTTOM EL. =  -450.0000     FOR LAYER 5
+
+                  IDOMAIN = 1 FOR LAYER 1
+
+                  IDOMAIN = 1 FOR LAYER 2
+
+                  IDOMAIN = 1 FOR LAYER 3
+
+                  IDOMAIN = 1 FOR LAYER 4
+
+                  IDOMAIN = 1 FOR LAYER 5
+ END PROCESSING GRIDDATA
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM UNIT 1007
+
+
+ # NPF: Node Property Flow package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+ PROCESSING NPF OPTIONS
+    CELL-BY-CELL FLOW INFORMATION WILL BE SAVED TO BINARY FILE WHENEVER ICBCFL IS NOT ZERO.
+    SPECIFIC DISCHARGE WILL BE CALCULATED AT CELL CENTERS AND WRITTEN TO DATA-SPDIS IN BUDGET FILE WHEN REQUESTED.
+ END OF NPF OPTIONS
+
+ WEL   -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1010
+ # WEL: Well package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+
+ PROCESSING WEL OPTIONS
+    AUXILIARY WEL VARIABLE: IFACE           
+    WEL BOUNDARIES HAVE NAMES IN LAST COLUMN.
+    LISTS OF WEL CELLS WILL BE PRINTED.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+    AUTOMATIC FLOW REDUCTION OF WELLS IMPLEMENTED.
+    AUTOMATIC FLOW REDUCTION FRACTION (  0.1000000E-05).
+ END OF WEL OPTIONS
+
+ PROCESSING WEL DIMENSIONS
+    MAXBOUND =      15
+ END OF WEL DIMENSIONS
+
+ DRN   -- DRN PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1011
+ # DRN: Drain package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+
+ PROCESSING DRN OPTIONS
+    AUXILIARY DRN VARIABLE: IFACE           
+    DRN BOUNDARIES HAVE NAMES IN LAST COLUMN.
+    LISTS OF DRN CELLS WILL BE PRINTED.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END OF DRN OPTIONS
+
+ PROCESSING DRN DIMENSIONS
+    MAXBOUND =       9
+ END OF DRN DIMENSIONS
+
+ RCH   -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1012
+ # RCH: Recharge package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+
+ PROCESSING RCH OPTIONS
+    AUXILIARY RCH VARIABLE: IFACE           
+    LISTS OF RCH CELLS WILL BE PRINTED.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+    RCH BOUNDARIES HAVE NAMES IN LAST COLUMN.
+    RECHARGE WILL BE APPLIED TO SPECIFIED CELL.
+ END OF RCH OPTIONS
+
+ PROCESSING RCH DIMENSIONS
+    MAXBOUND =     225
+ END OF RCH DIMENSIONS
+
+ CHD   -- CHD PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1009
+ # CHD: Time-Variant Specified-Head package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+
+ PROCESSING CHD OPTIONS
+    AUXILIARY CHD VARIABLE: IFACE           
+    CHD BOUNDARIES HAVE NAMES IN LAST COLUMN.
+    LISTS OF CHD CELLS WILL BE PRINTED.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END OF CHD OPTIONS
+
+ PROCESSING CHD DIMENSIONS
+    MAXBOUND =       1
+ END OF CHD DIMENSIONS
+
+ IC -- INITIAL CONDITIONS PACKAGE, VERSION 8, 3/28/2015 INPUT READ FROM UNIT 1006
+ # Initial Conditions Package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+ PROCESSING IC OPTIONS
+ END OF IC OPTIONS
+ PROCESSING GRIDDATA
+
+     INITIAL HEAD =   200.0000     FOR LAYER 1
+
+     INITIAL HEAD =   200.0000     FOR LAYER 2
+
+     INITIAL HEAD =   200.0000     FOR LAYER 3
+
+     INITIAL HEAD =   200.0000     FOR LAYER 4
+
+     INITIAL HEAD =   200.0000     FOR LAYER 5
+ END PROCESSING GRIDDATA
+ PROCESSING GRIDDATA
+
+                ICELLTYPE = 0 FOR LAYER 1
+
+                ICELLTYPE = 0 FOR LAYER 2
+
+                ICELLTYPE = 0 FOR LAYER 3
+
+                ICELLTYPE = 0 FOR LAYER 4
+
+                ICELLTYPE = 0 FOR LAYER 5
+
+                        K =  0.1000000E-02 FOR LAYER 1
+
+                        K =   1000.000     FOR LAYER 2
+
+                        K =  0.1000000E-02 FOR LAYER 3
+
+                        K =   1000.000     FOR LAYER 4
+
+                        K =  0.2000000E-02 FOR LAYER 5
+
+                      K33 =   1.000000     FOR LAYER 1
+
+                      K33 =  0.1000000E-05 FOR LAYER 2
+
+                      K33 =   1.000000     FOR LAYER 3
+
+                      K33 =  0.5000000E-06 FOR LAYER 4
+
+                      K33 =   1.000000     FOR LAYER 5
+
+                      K22 =  0.1000000E-02 FOR LAYER 1
+
+                      K22 =   1000.000     FOR LAYER 2
+
+                      K22 =  0.1000000E-02 FOR LAYER 3
+
+                      K22 =   1000.000     FOR LAYER 4
+
+                      K22 =  0.2000000E-02 FOR LAYER 5
+
+                   ANGLE1 =   0.000000     FOR LAYER 1
+
+                   ANGLE1 =   0.000000     FOR LAYER 2
+
+                   ANGLE1 =   0.000000     FOR LAYER 3
+
+                   ANGLE1 =   0.000000     FOR LAYER 4
+
+                   ANGLE1 =   0.000000     FOR LAYER 5
+
+                   ANGLE2 =   0.000000     FOR LAYER 1
+
+                   ANGLE2 =   0.000000     FOR LAYER 2
+
+                   ANGLE2 =   0.000000     FOR LAYER 3
+
+                   ANGLE2 =   0.000000     FOR LAYER 4
+
+                   ANGLE2 =   0.000000     FOR LAYER 5
+
+                   ANGLE3 =   0.000000     FOR LAYER 1
+
+                   ANGLE3 =   0.000000     FOR LAYER 2
+
+                   ANGLE3 =   0.000000     FOR LAYER 3
+
+                   ANGLE3 =   0.000000     FOR LAYER 4
+
+                   ANGLE3 =   0.000000     FOR LAYER 5
+ END PROCESSING GRIDDATA
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1014
+      FILE NAME: C:\Users\burse\Documents\Projects\modflow-fortran\modflow_fortran\examples\example_problem.dis.grb
+
+ OPENED C:\Users\burse\Documents\Projects\modflow-fortran\modflow_fortran\examples\example_problem.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1014   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+ # Output Control file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1015
+      FILE NAME: example_problem.cbc
+
+ OPENED example_problem.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1015   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1016
+      FILE NAME: example_problem.bhd
+
+ OPENED example_problem.bhd
+ FILE TYPE:DATA(BINARY)   UNIT 1016   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+      ALL TIME STEPS WILL BE PRINTED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+ -------------------------------------------------------------------------------------------------------------
+  WEL NO.    LAYER    ROW     COL     STRESS RATE    BOUNDNAME                                     IFACE      
+ -------------------------------------------------------------------------------------------------------------
+     1         1       9       8    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     2         1       9      10    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     3         1       9      12    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     4         1       9      14    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     5         1      11       8    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     6         1      11      10    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     7         1      11      12    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     8         1      11      14    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     9         1      13       8    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     10        1      13      10    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     11        1      13      12    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     12        1      13      14    -5.00000000      WELL_1_LAYER_1                            0.00000000     
+     13        3       4       6    -5.00000000      WELL_1_LAYER_3                            0.00000000     
+     14        3       6      12    -5.00000000      WELL_1_LAYER_3                            0.00000000     
+     15        5       5      11    -5.00000000      WELL_1_LAYER_5                            0.00000000     
+ -------------------------------------------------------------------------------------------------------------
+
+
+ ------------------------------------------------------------------------------------------------------------------------------
+  DRN NO.    LAYER    ROW     COL      DRAIN EL.       CONDUCTANCE    BOUNDNAME                                     IFACE      
+ ------------------------------------------------------------------------------------------------------------------------------
+     1         1       8       2     0.00000000       1.00000000      DRAIN1                                    0.00000000     
+     2         1       8       3     0.00000000       1.00000000      DRAIN1                                    0.00000000     
+     3         1       8       4     10.0000000       1.00000000      DRAIN2                                    0.00000000     
+     4         1       8       5     20.0000000       1.00000000      DRAIN3                                    0.00000000     
+     5         1       8       6     30.0000000       1.00000000      DRAIN4                                    0.00000000     
+     6         1       8       7     50.0000000       1.00000000      DRAIN5                                    0.00000000     
+     7         1       8       8     70.0000000       1.00000000      DRAIN6                                    0.00000000     
+     8         1       8       9     90.0000000       1.00000000      DRAIN7                                    0.00000000     
+     9         1       8      10     100.000000       1.00000000      DRAIN8                                    0.00000000     
+ ------------------------------------------------------------------------------------------------------------------------------
+
+
+ -------------------------------------------------------------------------------------------------------------
+  RCH NO.    LAYER    ROW     COL       RECHARGE     BOUNDNAME                                     IFACE      
+ -------------------------------------------------------------------------------------------------------------
+     1         1      15      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     2         1      15      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     3         1      15      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     4         1      15      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     5         1      15      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     6         1      15      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     7         1      15       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     8         1      15       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     9         1      15       7     3.000000000E-08 RECHARGE                                  0.00000000     
+     10        1      15       6     3.000000000E-08 RECHARGE                                  0.00000000     
+     11        1      15       5     3.000000000E-08 RECHARGE                                  0.00000000     
+     12        1      15       4     3.000000000E-08 RECHARGE                                  0.00000000     
+     13        1      15       3     3.000000000E-08 RECHARGE                                  0.00000000     
+     14        1      15       2     3.000000000E-08 RECHARGE                                  0.00000000     
+     15        1      15       1     3.000000000E-08 RECHARGE                                  0.00000000     
+     16        1      14      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     17        1      14      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     18        1      14      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     19        1      14      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     20        1      14      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     21        1      14      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     22        1      14       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     23        1      14       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     24        1      14       7     3.000000000E-08 RECHARGE                                  0.00000000     
+     25        1      14       6     3.000000000E-08 RECHARGE                                  0.00000000     
+     26        1      14       5     3.000000000E-08 RECHARGE                                  0.00000000     
+     27        1      14       4     3.000000000E-08 RECHARGE                                  0.00000000     
+     28        1      14       3     3.000000000E-08 RECHARGE                                  0.00000000     
+     29        1      14       2     3.000000000E-08 RECHARGE                                  0.00000000     
+     30        1      14       1     3.000000000E-08 RECHARGE                                  0.00000000     
+     31        1      13      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     32        1      13      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     33        1      13      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     34        1      13      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     35        1      13      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     36        1      13      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     37        1      13       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     38        1      13       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     39        1      13       7     3.000000000E-08 RECHARGE                                  0.00000000     
+     40        1      13       6     3.000000000E-08 RECHARGE                                  0.00000000     
+     41        1      13       5     3.000000000E-08 RECHARGE                                  0.00000000     
+     42        1      13       4     3.000000000E-08 RECHARGE                                  0.00000000     
+     43        1      13       3     3.000000000E-08 RECHARGE                                  0.00000000     
+     44        1      13       2     3.000000000E-08 RECHARGE                                  0.00000000     
+     45        1      13       1     3.000000000E-08 RECHARGE                                  0.00000000     
+     46        1      12      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     47        1      12      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     48        1      12      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     49        1      12      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     50        1      12      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     51        1      12      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     52        1      12       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     53        1      12       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     54        1      12       7     3.000000000E-08 RECHARGE                                  0.00000000     
+     55        1      12       6     3.000000000E-08 RECHARGE                                  0.00000000     
+     56        1      12       5     3.000000000E-08 RECHARGE                                  0.00000000     
+     57        1      12       4     3.000000000E-08 RECHARGE                                  0.00000000     
+     58        1      12       3     3.000000000E-08 RECHARGE                                  0.00000000     
+     59        1      12       2     3.000000000E-08 RECHARGE                                  0.00000000     
+     60        1      12       1     3.000000000E-08 RECHARGE                                  0.00000000     
+     61        1      11      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     62        1      11      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     63        1      11      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     64        1      11      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     65        1      11      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     66        1      11      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     67        1      11       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     68        1      11       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     69        1      11       7     3.000000000E-08 RECHARGE                                  0.00000000     
+     70        1      11       6     3.000000000E-08 RECHARGE                                  0.00000000     
+     71        1      11       5     3.000000000E-08 RECHARGE                                  0.00000000     
+     72        1      11       4     3.000000000E-08 RECHARGE                                  0.00000000     
+     73        1      11       3     3.000000000E-08 RECHARGE                                  0.00000000     
+     74        1      11       2     3.000000000E-08 RECHARGE                                  0.00000000     
+     75        1      11       1     3.000000000E-08 RECHARGE                                  0.00000000     
+     76        1      10      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     77        1      10      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     78        1      10      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     79        1      10      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     80        1      10      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     81        1      10      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     82        1      10       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     83        1      10       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     84        1      10       7     3.000000000E-08 RECHARGE                                  0.00000000     
+     85        1      10       6     3.000000000E-08 RECHARGE                                  0.00000000     
+     86        1      10       5     3.000000000E-08 RECHARGE                                  0.00000000     
+     87        1      10       4     3.000000000E-08 RECHARGE                                  0.00000000     
+     88        1      10       3     3.000000000E-08 RECHARGE                                  0.00000000     
+     89        1      10       2     3.000000000E-08 RECHARGE                                  0.00000000     
+     90        1      10       1     3.000000000E-08 RECHARGE                                  0.00000000     
+     91        1       9      15     3.000000000E-08 RECHARGE                                  0.00000000     
+     92        1       9      14     3.000000000E-08 RECHARGE                                  0.00000000     
+     93        1       9      13     3.000000000E-08 RECHARGE                                  0.00000000     
+     94        1       9      12     3.000000000E-08 RECHARGE                                  0.00000000     
+     95        1       9      11     3.000000000E-08 RECHARGE                                  0.00000000     
+     96        1       9      10     3.000000000E-08 RECHARGE                                  0.00000000     
+     97        1       9       9     3.000000000E-08 RECHARGE                                  0.00000000     
+     98        1       9       8     3.000000000E-08 RECHARGE                                  0.00000000     
+     99        1       9       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    100        1       9       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    101        1       9       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    102        1       9       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    103        1       9       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    104        1       9       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    105        1       9       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    106        1       8      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    107        1       8      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    108        1       8      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    109        1       8      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    110        1       8      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    111        1       8      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    112        1       8       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    113        1       8       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    114        1       8       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    115        1       8       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    116        1       8       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    117        1       8       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    118        1       8       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    119        1       8       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    120        1       8       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    121        1       7      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    122        1       7      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    123        1       7      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    124        1       7      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    125        1       7      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    126        1       7      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    127        1       7       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    128        1       7       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    129        1       7       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    130        1       7       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    131        1       7       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    132        1       7       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    133        1       7       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    134        1       7       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    135        1       7       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    136        1       6      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    137        1       6      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    138        1       6      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    139        1       6      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    140        1       6      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    141        1       6      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    142        1       6       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    143        1       6       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    144        1       6       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    145        1       6       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    146        1       6       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    147        1       6       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    148        1       6       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    149        1       6       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    150        1       6       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    151        1       5      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    152        1       5      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    153        1       5      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    154        1       5      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    155        1       5      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    156        1       5      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    157        1       5       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    158        1       5       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    159        1       5       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    160        1       5       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    161        1       5       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    162        1       5       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    163        1       5       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    164        1       5       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    165        1       5       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    166        1       4      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    167        1       4      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    168        1       4      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    169        1       4      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    170        1       4      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    171        1       4      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    172        1       4       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    173        1       4       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    174        1       4       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    175        1       4       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    176        1       4       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    177        1       4       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    178        1       4       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    179        1       4       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    180        1       4       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    181        1       3      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    182        1       3      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    183        1       3      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    184        1       3      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    185        1       3      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    186        1       3      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    187        1       3       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    188        1       3       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    189        1       3       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    190        1       3       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    191        1       3       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    192        1       3       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    193        1       3       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    194        1       3       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    195        1       3       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    196        1       2      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    197        1       2      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    198        1       2      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    199        1       2      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    200        1       2      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    201        1       2      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    202        1       2       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    203        1       2       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    204        1       2       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    205        1       2       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    206        1       2       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    207        1       2       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    208        1       2       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    209        1       2       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    210        1       2       1     3.000000000E-08 RECHARGE                                  0.00000000     
+    211        1       1      15     3.000000000E-08 RECHARGE                                  0.00000000     
+    212        1       1      14     3.000000000E-08 RECHARGE                                  0.00000000     
+    213        1       1      13     3.000000000E-08 RECHARGE                                  0.00000000     
+    214        1       1      12     3.000000000E-08 RECHARGE                                  0.00000000     
+    215        1       1      11     3.000000000E-08 RECHARGE                                  0.00000000     
+    216        1       1      10     3.000000000E-08 RECHARGE                                  0.00000000     
+    217        1       1       9     3.000000000E-08 RECHARGE                                  0.00000000     
+    218        1       1       8     3.000000000E-08 RECHARGE                                  0.00000000     
+    219        1       1       7     3.000000000E-08 RECHARGE                                  0.00000000     
+    220        1       1       6     3.000000000E-08 RECHARGE                                  0.00000000     
+    221        1       1       5     3.000000000E-08 RECHARGE                                  0.00000000     
+    222        1       1       4     3.000000000E-08 RECHARGE                                  0.00000000     
+    223        1       1       3     3.000000000E-08 RECHARGE                                  0.00000000     
+    224        1       1       2     3.000000000E-08 RECHARGE                                  0.00000000     
+    225        1       1       1     3.000000000E-08 RECHARGE                                  0.00000000     
+ -------------------------------------------------------------------------------------------------------------
+
+
+ -------------------------------------------------------------------------------------------------------------
+  CHD NO.    LAYER    ROW     COL         HEAD       BOUNDNAME                                     IFACE      
+ -------------------------------------------------------------------------------------------------------------
+     1         1      15       1     0.00000000      OBJECT1                                   0.00000000     
+ -------------------------------------------------------------------------------------------------------------
+
+
+
+ INNER ITERATION SUMMARY
+ --------------------------------------------------------------------------------------------------------------------------------------
+      TOTAL      OUTER      INNER                                                            MAXIMUM                                   
+  ITERATION  ITERATION  ITERATION  MAXIMUM CHANGE      MAXIMUM CHANGE MODEL-(CELLID)        RESIDUAL    MAXIMUM RESIDUAL MODEL-(CELLID)
+ --------------------------------------------------------------------------------------------------------------------------------------
+          1          1          1      -76.521946                      1_GWF-(1,8,3)       84.318634                     1_GWF-(2,14,2)
+          2          1          2      -2.8466202                      1_GWF-(1,9,1)       21.285064                     1_GWF-(2,15,1)
+          3          1          3     -0.25538044                      1_GWF-(1,6,6)       26.607626                     1_GWF-(2,14,2)
+          4          1          4      0.22785956                      1_GWF-(1,6,5)      -81.374949                     1_GWF-(2,14,2)
+          5          1          5      0.16702416                      1_GWF-(1,5,7)       203.30103                     1_GWF-(2,14,2)
+          6          1          6     -0.21931448                     1_GWF-(1,11,4)      -147.25947                     1_GWF-(2,14,2)
+          7          1          7      0.18519964                     1_GWF-(1,10,1)      -186.36494                     1_GWF-(2,15,1)
+          8          1          8      0.68411598                      1_GWF-(1,5,7)      -473.22194                     1_GWF-(2,14,2)
+          9          1          9      -1.2865972                      1_GWF-(1,5,7)       332.54141                      1_GWF-(2,8,2)
+         10          1         10      -1.7054265                      1_GWF-(1,4,8)      -850.17119                      1_GWF-(2,8,2)
+         11          1         11      -3.4243187                     1_GWF-(1,10,1)       2227.0851                     1_GWF-(2,12,2)
+         12          1         12      -8.4016811                     1_GWF-(1,11,1)       2901.4366                     1_GWF-(2,14,2)
+         13          1         13      -10.704811                      1_GWF-(1,3,8)       1430.4290                      1_GWF-(2,8,2)
+         14          1         14      -3.9196495                     1_GWF-(1,10,1)       451.56679                     1_GWF-(2,12,4)
+         15          1         15      -1.2064296                     1_GWF-(1,12,1)       288.18112                      1_GWF-(2,7,2)
+         16          1         16     -0.49902227                      1_GWF-(1,3,9)      -123.08263                      1_GWF-(2,7,2)
+         17          1         17      0.17429027                     1_GWF-(1,12,1)       79.410250                      1_GWF-(2,7,2)
+         18          1         18      0.28725308                      1_GWF-(1,2,9)      -84.154104                      1_GWF-(2,7,2)
+         19          1         19     -0.20000523                     1_GWF-(1,13,2)      -38.833144                     1_GWF-(2,10,2)
+         20          1         20 -8.43585453E-02                     1_GWF-(1,1,10)       38.137095                     1_GWF-(2,10,2)
+         21          1         21  9.75180700E-02                     1_GWF-(1,1,10)       68.341263                      1_GWF-(2,6,2)
+         22          1         22     -0.24321825                     1_GWF-(1,13,2)       143.70082                     1_GWF-(2,2,14)
+         23          1         23     -0.94580195                     1_GWF-(1,1,11)      -268.50996                      1_GWF-(2,9,2)
+         24          1         24      -1.3965024                     1_GWF-(1,12,1)       1759.7914                     1_GWF-(2,2,14)
+         25          1         25      -18.100842                     1_GWF-(1,13,1)       5753.3218                     1_GWF-(2,1,15)
+         26          1         26      -85.254852                     1_GWF-(1,1,10)       13896.945                     1_GWF-(2,2,14)
+         27          1         27      -49.544124                     1_GWF-(5,6,10)      -5475.6732                     1_GWF-(2,2,14)
+         28          1         28      -19.991575                     1_GWF-(1,14,1)       4544.6734                     1_GWF-(2,2,14)
+         29          1         29      -12.652312                     1_GWF-(1,1,11)      -1728.4482                     1_GWF-(2,2,14)
+         30          1         30      -3.7510981                     1_GWF-(1,3,12)      -980.31922                      1_GWF-(2,1,2)
+         31          1         31      -3.4344805                     1_GWF-(1,14,1)      -701.84733                     1_GWF-(2,2,14)
+         32          1         32      -1.2166873                     1_GWF-(1,1,11)      -329.14754                      1_GWF-(2,7,5)
+         33          1         33      0.85529003                     1_GWF-(1,14,1)      -234.29205                     1_GWF-(2,9,10)
+         34          1         34     -0.87998600                     1_GWF-(1,14,1)       249.29545                     1_GWF-(2,2,12)
+         35          1         35     -0.32286004                     1_GWF-(1,1,12)       68.641412                      1_GWF-(2,6,5)
+         36          1         36      0.11447055                     1_GWF-(1,13,2)      -16.017451                      1_GWF-(2,1,2)
+         37          1         37 -2.26641131E-02                     1_GWF-(1,14,1)      -6.2927260                      1_GWF-(2,2,1)
+         38          1         38 -8.40486423E-03                     1_GWF-(1,13,2)      -1.7906993                      1_GWF-(2,1,2)
+         39          1         39  1.67430068E-03                     1_GWF-(1,13,2)       1.6993718                      1_GWF-(2,1,2)
+         40          1         40  2.29992079E-03                     1_GWF-(1,12,4)       2.0296497                      1_GWF-(2,2,1)
+         41          1         41 -2.06574909E-03                     1_GWF-(1,13,2)     -0.39077956                      1_GWF-(2,2,1)
+         42          1         42 -4.73353794E-04                     1_GWF-(1,12,4) -8.58075017E-02                      1_GWF-(2,1,2)
+         43          2          1      -18.989136                     1_GWF-(1,8,10)       5.5982154                     1_GWF-(2,7,10)
+         44          2          2     -0.59025135                     1_GWF-(1,7,11)       2.5345977                      1_GWF-(2,8,9)
+         45          2          3 -2.83672131E-02                     1_GWF-(1,6,12)       1.1392065                      1_GWF-(2,9,9)
+         46          2          4  1.53644602E-02                     1_GWF-(1,6,12)      -2.1310688                     1_GWF-(2,7,10)
+         47          2          5  3.56238019E-02                     1_GWF-(1,5,13)       3.9630226                     1_GWF-(2,7,10)
+         48          2          6 -6.76308732E-02                     1_GWF-(1,5,13)       10.913945                     1_GWF-(2,8,10)
+         49          2          7  4.86433965E-02                     1_GWF-(1,5,13)      -17.483519                     1_GWF-(2,8,10)
+         50          2          8  6.02740653E-02                     1_GWF-(1,4,14)      -35.662293                     1_GWF-(2,7,11)
+         51          2          9 -7.69428469E-02                     1_GWF-(1,12,6)       69.450830                     1_GWF-(2,7,11)
+         52          2         10     -0.48200010                     1_GWF-(1,4,14)      -114.96848                      1_GWF-(2,1,2)
+         53          2         11     -0.84210765                     1_GWF-(1,5,13)      -130.47040                      1_GWF-(2,2,1)
+         54          2         12     -0.89209339                     1_GWF-(1,4,14)       123.80450                      1_GWF-(2,7,9)
+         55          2         13     -0.32978293                     1_GWF-(1,3,15)       67.909732                     1_GWF-(2,6,10)
+         56          2         14 -8.23431096E-02                     1_GWF-(1,11,7)      -28.594145                      1_GWF-(2,1,2)
+         57          2         15 -9.17154255E-02                     1_GWF-(1,12,5)      -25.545793                      1_GWF-(2,2,1)
+         58          2         16 -7.40287837E-02                     1_GWF-(1,3,15)      -14.845886                     1_GWF-(2,14,2)
+         59          2         17  2.30561174E-02                     1_GWF-(1,3,15)       7.9402709                      1_GWF-(2,1,2)
+         60          2         18  1.18989473E-02                     1_GWF-(1,2,15)       6.1875008                     1_GWF-(2,2,14)
+         61          2         19 -1.82559936E-02                     1_GWF-(1,3,15)      -4.3249978                      1_GWF-(2,2,1)
+         62          2         20  1.68751313E-02                     1_GWF-(1,3,15)      -2.8270508                     1_GWF-(2,3,15)
+         63          2         21 -1.01961876E-02                     1_GWF-(1,3,15)      -4.9780330                     1_GWF-(2,4,14)
+         64          2         22 -1.05658208E-02                     1_GWF-(1,2,15)       8.3947058                     1_GWF-(2,4,14)
+         65          2         23  5.59162377E-02                     1_GWF-(1,3,15)       16.001995                      1_GWF-(2,1,2)
+         66          2         24     -0.17340727                     1_GWF-(1,3,15)      -69.221586                      1_GWF-(2,1,2)
+         67          2         25     -0.81385808                     1_GWF-(1,2,15)      -501.12877                      1_GWF-(2,2,1)
+         68          2         26      -5.4967321                     1_GWF-(1,15,3)      -1211.9831                      1_GWF-(2,1,2)
+         69          2         27      -11.561972                     1_GWF-(1,3,15)      -584.64314                      1_GWF-(2,2,1)
+         70          2         28      -2.6553343                     1_GWF-(1,2,15)       272.19361                     1_GWF-(2,11,2)
+         71          2         29     -0.46058149                     1_GWF-(1,15,2)       94.870627                     1_GWF-(2,12,3)
+         72          2         30     -0.19120680                     1_GWF-(1,13,4)      -37.166565                     1_GWF-(2,3,14)
+         73          2         31     -0.20443903                     1_GWF-(1,2,15)      -22.056320                     1_GWF-(2,10,2)
+         74          2         32  7.98211423E-02                     1_GWF-(1,2,15)       25.990919                     1_GWF-(2,2,12)
+         75          2         33  4.74995970E-02                     1_GWF-(1,15,2)      -22.995805                     1_GWF-(2,10,2)
+         76          2         34 -3.63176483E-02                     1_GWF-(1,2,15)      -3.4788184                      1_GWF-(2,9,3)
+         77          2         35 -1.02049386E-02                     1_GWF-(1,15,2)      -3.5983406                     1_GWF-(2,12,2)
+         78          2         36  9.60613951E-03                     1_GWF-(1,15,2)      -2.0193599                     1_GWF-(2,14,6)
+         79          2         37 -2.58814732E-03                     1_GWF-(1,4,14)      0.99540960                     1_GWF-(2,12,1)
+         80          2         38  1.46939663E-03                     1_GWF-(1,2,15)      0.27984276                     1_GWF-(2,11,2)
+         81          2         39  4.88253350E-04                     1_GWF-(1,15,2) -5.12373789E-02                     1_GWF-(2,13,2)
+         82          3          1     -0.80528032                      1_GWF-(1,8,6)      0.16369236                      1_GWF-(2,7,6)
+         83          3          2 -2.21684993E-02                      1_GWF-(1,7,7)  6.09824039E-02                      1_GWF-(2,8,6)
+         84          3          3 -1.08135061E-03                      1_GWF-(1,6,8)  2.51796510E-02                      1_GWF-(2,7,7)
+         85          3          4  6.46017281E-04                      1_GWF-(1,6,8) -6.84072814E-02                      1_GWF-(2,7,7)
+         86          4          1 -5.21923202E-04                      1_GWF-(1,6,8)  5.11187389E-02                      1_GWF-(2,7,7)
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1015 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL MODFLOW          PACKAGE NPF             CONNECTED TO MODEL MODFLOW          PACKAGE NPF              ON UNIT   1015 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL MODFLOW          PACKAGE MODFLOW         CONNECTED TO MODEL MODFLOW          PACKAGE WEL-1            ON UNIT   1015 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              DRN IN MODEL MODFLOW          PACKAGE MODFLOW         CONNECTED TO MODEL MODFLOW          PACKAGE DRN-1            ON UNIT   1015 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              RCH IN MODEL MODFLOW          PACKAGE MODFLOW         CONNECTED TO MODEL MODFLOW          PACKAGE RCH-1            ON UNIT   1015 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              CHD IN MODEL MODFLOW          PACKAGE MODFLOW         CONNECTED TO MODEL MODFLOW          PACKAGE CHD-1            ON UNIT   1015 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1016 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 WEL =           0.0000                   WEL =           0.0000     WEL-1           
+                 DRN =           0.0000                   DRN =           0.0000     DRN-1           
+                 RCH =    14515200.0000                   RCH =         168.0000     RCH-1           
+                 CHD =           0.0000                   CHD =           0.0000     CHD-1           
+
+            TOTAL IN =    14515200.0000              TOTAL IN =         168.0000
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 WEL =     6480000.0000                   WEL =          75.0000     WEL-1           
+                 DRN =     4445038.1083                   DRN =          51.4472     DRN-1           
+                 RCH =           0.0000                   RCH =           0.0000     RCH-1           
+                 CHD =     3733581.5887                   CHD =          43.2127     CHD-1           
+
+           TOTAL OUT =    14658619.6969             TOTAL OUT =         169.6600
+
+            IN - OUT =     -143419.6969              IN - OUT =          -1.6600
+
+ PERCENT DISCREPANCY =          -0.98     PERCENT DISCREPANCY =          -0.98
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
+ STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+         TOTAL TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+
+
+end timestep
+

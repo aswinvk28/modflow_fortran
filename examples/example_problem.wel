@@ -1,0 +1,31 @@
+# WEL: Well package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+BEGIN OPTIONS
+    AUXILIARY IFACE
+    BOUNDNAMES
+    PRINT_INPUT
+    SAVE_FLOWS
+    AUTO_FLOW_REDUCE  1.000000000000E-006 
+END OPTIONS
+
+BEGIN DIMENSIONS
+  MAXBOUND    15
+END DIMENSIONS
+
+BEGIN PERIOD      1
+     1     9     8 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1     9    10 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1     9    12 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1     9    14 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    11     8 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    11    10 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    11    12 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    11    14 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    13     8 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    13    10 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    13    12 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     1    13    14 -5.000000000000E+000      0 'Well_1_Layer_1'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_1 with formula: -5
+     3     4     6 -5.000000000000E+000      0 'Well_1_Layer_3'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_3 with formula: -5
+     3     6    12 -5.000000000000E+000      0 'Well_1_Layer_3'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_3 with formula: -5
+     5     5    11 -5.000000000000E+000      0 'Well_1_Layer_5'  # Data Set 6: Layer Row Column Q IFACE boundname Intersected by Well_1_Layer_5 with formula: -5
+END PERIOD 
+

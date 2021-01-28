@@ -1,0 +1,24 @@
+# DRN: Drain package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+BEGIN OPTIONS
+    AUXILIARY IFACE
+    BOUNDNAMES
+    PRINT_INPUT
+    SAVE_FLOWS
+END OPTIONS
+
+BEGIN DIMENSIONS
+  MAXBOUND     9
+END DIMENSIONS
+
+BEGIN PERIOD      1
+     1     8     2  0.000000000000E+000   1.000000000000E+000      0 'Drain1'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     3  0.000000000000E+000   1.000000000000E+000      0 'Drain1'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     4  1.000000000000E+001   1.000000000000E+000      0 'Drain2'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     5  2.000000000000E+001   1.000000000000E+000      0 'Drain3'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     6  3.000000000000E+001   1.000000000000E+000      0 'Drain4'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     7  5.000000000000E+001   1.000000000000E+000      0 'Drain5'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     8  7.000000000000E+001   1.000000000000E+000      0 'Drain6'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8     9  9.000000000000E+001   1.000000000000E+000      0 'Drain7'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+     1     8    10  1.000000000000E+002   1.000000000000E+000      0 'Drain8'  # Data Set 6: Layer Row Column Elevation Cond IFACE boundname
+END PERIOD 
+

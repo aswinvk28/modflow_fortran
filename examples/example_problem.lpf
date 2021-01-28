@@ -1,0 +1,18 @@
+# LPF: Layer Property Flow package file created on 27/01/2021 by ModelMuse version 4.3.0.0.
+     9 -2.000000000000E+020      0 # ILPFCB, HDRY, NPLPF
+     0     0     0 # LAYTYP
+     0     0     0 # LAYAVG
+    -1    -1    -1 # CHANI
+     0     0     0 # LAYVKA
+     0     0     0 # LAYWET
+CONSTANT     1.000000000000E-003  # HK Upper_Aquifer Layer 1
+CONSTANT     1.000000000000E+000  # HANI Upper_Aquifer Layer 1
+CONSTANT     1.000000000000E+000  # VKA Upper_Aquifer Layer 1
+CONSTANT     1.000000000000E-006  # VKCB Upper_Aquitard Layer 1
+CONSTANT     1.000000000000E-003  # HK Middle_Aquifer Layer 2
+CONSTANT     1.000000000000E+000  # HANI Middle_Aquifer Layer 2
+CONSTANT     1.000000000000E+000  # VKA Middle_Aquifer Layer 2
+CONSTANT     5.000000000000E-007  # VKCB Lower_Aquitard Layer 2
+CONSTANT     2.000000000000E-003  # HK Lower_Aquifer Layer 3
+CONSTANT     1.000000000000E+000  # HANI Lower_Aquifer Layer 3
+CONSTANT     1.000000000000E+000  # VKA Lower_Aquifer Layer 3
