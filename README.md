@@ -21,7 +21,7 @@ output:
 
 ```bash
 
-gfortran -fcoarray=lib helloworld.f90 -lcaf_mpi
+gfortran -fcoarray=lib coarray_hello.f90 -lcaf_mpi
 ./coarray_hello
 output: 
  number of Fortran coarray images:           1
