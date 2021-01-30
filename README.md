@@ -43,3 +43,11 @@ output:
 ## **Tutorial on ModFlow**
 
 [https://www.youtube.com/watch?v=dE5RCUElIu4](https://www.youtube.com/watch?v=dE5RCUElIu4)
+
+![./images/modflow-intro.png](./images/modflow-intro.png)
+
+![./images/modflow-3d.png](./images/modflow-3d.png)
+
+![./images/modflow-contour.png](./images/modflow-contour.png)
+
+![./images/modflow-view.png](./images/modflow-view.png)
